@@ -42,7 +42,7 @@ async function getWeatherByCity(myCity) {
         temperature.innerText = `${data.main.temp}°C`;
         description.innerText = data.weather[0].description;
         humidity.innerText = `${data.main.humidity}% humidity`
-        windSpeed.innerText = `${data.wind.speed} km/h`
+        windSpeed.innerText = `${((data.wind.speed) * 3.6).toFixed(1)} km/h`
         const imageName = data.weather[0].main;
         const imageArray = ['Clear', 'Clouds', 'Mist', 'Rain', 'Snow'];
         if (imageArray.includes(imageName)) {
